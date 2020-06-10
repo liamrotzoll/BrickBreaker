@@ -1,10 +1,12 @@
 // select canvas element from index.html
 const cvs = document.getElementById("breakout");
+
 // to draw on the canvas
 const ctx = cvs.getContext("2d");
 
 // add canvas border
-c.style.border = "1px solid #0ff";
+ ctx.style.border = "1px solid #0ff";
+
 // game variables and constants
 // make width more visible
 ctx.lineWidth = 3;
@@ -20,10 +22,10 @@ const paddle = {
     // y location of the paddle so it is centered
     y: cvs.height - PADDLE_MARGIN_BOTTOM - PADDLE_HEIGHT,
     // width of the paddle
-    width : PADDLE_WIDTH,
-    height : PADDLE_HEIGHT,
+    width: PADDLE_WIDTH,
+    height: PADDLE_HEIGHT,
     // how much the paddle moves
-    dx :5
+    dx: 5
 }
 // paddle being drawn
 function drawPaddle(){
