@@ -1,5 +1,5 @@
 // select canvas element from index.html
-const cvs = document.getElementByID("breakout");
+const cvs = document.getElementById("breakout");
 // to draw on the canvas
 const ctx = cvs.getContext("2d");
 
@@ -9,15 +9,16 @@ c.style.border = "1px solid #0ff";
 // make width more visible
 ctx.lineWidth = 3;
 const PADDLE_WIDTH = 100;
-const PADDLE_MARGIN_BOTTOM = 50:
+const PADDLE_MARGIN_BOTTOM = 50;
 const PADDLE_HEIGHT = 20;
 
 // paddle is created using the constants
 const paddle = {
-    // x location of the paddle so the paddle is now centered
-    x : cvs.width/2 - PADDLE_WIDTH/2;
+    // x location of the paddle so the paddle is now centered'
+    // this is a object since it is a key value pair
+    x : cvs.width/2 - PADDLE_WIDTH/2,
     // y location of the paddle so it is centered
-    y: cvs.height - PADDLE_MARGIN_BOTTOM - PADDLE_HEIGHT;
+    y: cvs.height - PADDLE_MARGIN_BOTTOM - PADDLE_HEIGHT,
     // width of the paddle
     width : PADDLE_WIDTH,
     height : PADDLE_HEIGHT,
