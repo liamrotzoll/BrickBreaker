@@ -5,7 +5,7 @@ const cvs = document.getElementById("breakout");
 const ctx = cvs.getContext("2d");
 
 // add canvas border
- ctx.style.border = "1px solid #0ff";
+ // ctx.style.border = "1px solid #0ff";
 
 // game variables and constants
 // make width more visible
