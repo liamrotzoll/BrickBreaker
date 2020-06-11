@@ -35,7 +35,7 @@ const paddle = {
 // paddle being drawn
 function drawPaddle(){
     // color of paddle
-    ctx.fillStyle = "2e3548";
+    ctx.fillStyle = "#2e3548";
     // know what to fill in
     ctx.fillRect(paddle.x, paddle.y, paddle.width, paddle.height);
     // color surrounding paddle
@@ -161,13 +161,13 @@ function update(){
 }
 // game loop
 function loop(){
-    // clear the canvas
+    // clear the canvas, start drawing image from (0,0) or the top left corner
     ctx.drawImage(BG_IMG,0,0);
-
+    // code that helps us to draw to canvas
     draw();
-
+    // game logic that helps the image run
     update();
-
+    // renders the next frame
     requestAnimationFrame(loop);
 }
 
