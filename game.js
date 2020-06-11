@@ -70,13 +70,15 @@ function movePaddle(){
 }
 // create the ball
 const ball ={
-    x : cvs.width/2,
-    y : paddle.y - BALL_RADIUS,
+    x : null,
+    y : null,
     radius : BALL_RADIUS,
     speed : 6,
-    dx : 3 * (Math.random() * 2 - 1 ),
-    dy : -3
+    dx : 0,
+    dy : 10
 }
+
+resetBall();
 
 // draw the ball
 function drawBall(){
@@ -96,6 +98,11 @@ function drawBall(){
 // MOVE THE BALL
 function moveBall(){
     ball.x += ball.dx;
+
+    // GRAVITY
+    ball.dy = ball.dy + .1;
+
+
     ball.y += ball.dy;
 }
 
@@ -118,9 +125,9 @@ function ballWallCollision(){
 // RESET THE BALL
 function resetBall(){
     ball.x = cvs.width/2;
-    ball.y = paddle.y - BALL_RADIUS;
-    ball.dx = 3 * (Math.random() * 2 - 1 );
-    ball.dy = -3;
+    ball.y = paddle.y - BALL_RADIUS - 200;
+    ball.dx = 0;
+    ball.dy = 0;
 }
 
 // BALL AND PADDLE COLLISION
