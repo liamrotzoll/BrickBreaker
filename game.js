@@ -75,7 +75,7 @@ const ball ={
     radius : BALL_RADIUS,
     speed : 6,
     dx : 3 * (Math.random() * 2 - 1 ),
-    dy : -3
+    dy : -8
 }
 
 // draw the ball
