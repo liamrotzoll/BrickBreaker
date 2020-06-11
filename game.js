@@ -73,7 +73,7 @@ const ball ={
     x : null,
     y : null,
     radius : BALL_RADIUS,
-    speed : 6,
+    speed : 10,
     dx : 0,
     dy : 10
 }
@@ -100,7 +100,7 @@ function moveBall(){
     ball.x += ball.dx;
 
     // GRAVITY
-    ball.dy = ball.dy + .1;
+    ball.dy = ball.dy + .2;
 
 
     ball.y += ball.dy;
