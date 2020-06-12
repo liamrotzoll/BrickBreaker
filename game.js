@@ -120,7 +120,7 @@ function ballWallCollision(){
 
     if(ball.y + ball.radius > cvs.height){
         LIFE--; // lost a life
-        resetBall(); // put ball in old positio
+        resetBall(); // put ball in old position
     }
 }
 // RESET THE BALL
@@ -147,6 +147,8 @@ function ballPaddleCollision(){
 
         ball.dx = ball.speed * Math.sin(angle);
         ball.dy =- ball.speed * Math.cos(angle);
+        score ++
+        document.getElementById('scoresheet').innerHTML = score;
     }
 }
 
