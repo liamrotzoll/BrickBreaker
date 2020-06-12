@@ -17,7 +17,7 @@ const PADDLE_HEIGHT = 20;
 let LIFE = 3; // 3 lives for the player
 let leftArrow = false;
 let rightArrow = false;
-
+let score = 0
 
 // paddle is created using the constants
 const paddle = {
@@ -32,6 +32,7 @@ const paddle = {
     // how much the paddle moves
     dx: 5
 }
+
 // paddle being drawn
 function drawPaddle(){
     // color of paddle
@@ -149,6 +150,18 @@ function ballPaddleCollision(){
     }
 }
 
+// update score
+function point (){
+   // ball hits paddle, we increment the score
+   if(ball.x < paddle.x + paddle.width && ball.x > paddle.x && paddle.y < paddle.y + paddle.height && ball.y > paddle.y){
+        score ++ ;
+        document.getElementById('scoresheet').innerHTML = score;
+   // ball does not hits the lower bound, we reset the score to zero
+   } else if(ball.y + ball.radius > cvs.height){
+        score = 0
+   }
+}
+
 // draw function
 function draw(){
     drawPaddle();
@@ -165,6 +178,7 @@ function update(){
     ballWallCollision();
 
     ballPaddleCollision();
+
 }
 // game loop
 function loop(){
@@ -179,3 +193,4 @@ function loop(){
 }
 
 loop();
+
